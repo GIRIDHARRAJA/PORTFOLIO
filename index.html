@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIRIDHARRAJA T — Aspiring Software Engineer & AI Specialist</title>
+  <meta name="description" content="Portfolio of GIRIDHARRAJA T, Aspiring Software Engineer specializing in Artificial Intelligence, Machine Learning, Computer Vision, Python, and Full-Stack Development.">
+  <meta name="keywords" content="GIRIDHARRAJA T, Software Engineer, Artificial Intelligence, Machine Learning, Python, Java, Computer Vision, Portfolio">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="GIRIDHARRAJA T — AI & Software Engineer Portfolio">
+  <meta property="og:description" content="Explore Giridharraja's AI/ML projects, computer vision systems, skill stack, achievements, and contact details.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Particle & Gradient Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" id="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+        <span class="logo-text">Giridhar<span class="highlight">.dev</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#skills" class="nav-link"><i class="fa-solid fa-layer-group"></i> Skills</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-cubes"></i> Projects</a>
+        <a href="#experience" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education & Exp</a>
+        <a href="#achievements" class="nav-link"><i class="fa-solid fa-trophy"></i> Awards</a>
+        <a href="#playground" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Lab</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="terminal-trigger" class="btn-icon" title="Open Interactive CLI Terminal" aria-label="Open Terminal">
+          <i class="fa-solid fa-terminal"></i>
+          <span class="pulse-indicator"></span>
+        </button>
+        <button id="theme-toggle" class="btn-icon" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary nav-cta">Get In Touch</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="status-badge glow-box">
+            <span class="status-dot"></span>
+            <span>Seeking Entry-Level Software Engineer Positions</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">GIRIDHARRAJA T</span>
+          </h1>
+
+          <div class="typewriter-container">
+            <span class="typewriter-prefix">I build </span>
+            <span id="typewriter-text" class="typewriter-text"></span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            B.E. Artificial Intelligence & Machine Learning candidate at Velalar College of Engineering and Technology (Anna University). Dedicated to building efficient software solutions combining Computer Vision, NLP, Python, and modern Web Technologies.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary btn-lg glow-button">
+              <i class="fa-solid fa-rocket"></i> View Projects
+            </a>
+            <a href="#contact" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-envelope"></i> Contact Me
+            </a>
+            <button id="resume-modal-btn" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-file-arrow-down"></i> View Resume
+            </button>
+          </div>
+
+          <!-- Quick Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-card glass-card">
+              <div class="stat-number">7.2</div>
+              <div class="stat-label">B.E. CGPA</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-target="2">0</div>
+              <div class="stat-label">AI Projects</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-target="4">0</div>
+              <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-target="1">0</div>
+              <div class="stat-label">1st Prize Award</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-wrapper glass-card">
+            <div class="avatar-ring"></div>
+            <img src="assets/images/hero_developer_avatar.png" alt="Giridharraja T Portrait" class="hero-avatar" id="hero-avatar-img">
+            <div class="floating-badge badge-1">
+              <i class="fa-brands fa-python"></i> Python & AI
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="fa-solid fa-eye"></i> Computer Vision
+            </div>
+            <div class="floating-badge badge-3">
+              <i class="fa-solid fa-code"></i> Java & SQL
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle">CAREER OBJECTIVE</span>
+          <h2 class="section-title">Driven by <span class="gradient-text">AI Innovation</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text glass-card">
+            <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <h3>About Me</h3>
+            <p>
+              I am an aspiring Software Engineer currently pursuing my Bachelor of Engineering in Artificial Intelligence & Machine Learning at Velalar College of Engineering and Technology, Erode (Anna University).
+            </p>
+            <p>
+              I am passionate about creating efficient software applications, leveraging computer vision techniques for real-time video stream analysis, implementing natural language processing (NLP) models, and developing clean front-end interfaces.
+            </p>
+            
+            <div class="highlights-list">
+              <div class="highlight-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Computer Vision & Real-Time Object Detection Systems</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>NLP & Semantic Similarity Role Matching</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Blockchain & Smart Contracts Exposure (Spotknack Tech)</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Award-winning Prompt Engineering & Hackathon participant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cards-col">
+            <div class="info-card glass-card hover-lift">
+              <i class="fa-solid fa-brain info-icon"></i>
+              <div>
+                <h4>Artificial Intelligence & Machine Learning</h4>
+                <p>Developing object detection models, NLP semantic search systems, and intelligent skill gap analysis engines.</p>
+              </div>
+            </div>
+
+            <div class="info-card glass-card hover-lift">
+              <i class="fa-solid fa-code info-icon"></i>
+              <div>
+                <h4>Software Engineering & Web</h4>
+                <p>Writing clean Python & Java code, building responsive HTML/CSS web interfaces, and executing SQL queries.</p>
+              </div>
+            </div>
+
+            <div class="info-card glass-card hover-lift">
+              <i class="fa-solid fa-cubes-stacked info-icon"></i>
+              <div>
+                <h4>Blockchain & Emerging Tech</h4>
+                <p>Completed Inplant Training at Spotknack Tech Solutions exploring decentralized applications (DApps) & smart contract workflows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section-padding alt-bg">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle">TECHNICAL PROFICIENCY</span>
+          <h2 class="section-title">Skills & <span class="gradient-text">Tools</span></h2>
+        </div>
+
+        <div class="skills-filter-tabs">
+          <button class="skill-tab active" data-category="all">All Tech</button>
+          <button class="skill-tab" data-category="languages">Languages</button>
+          <button class="skill-tab" data-category="web">Web & Database</button>
+          <button class="skill-tab" data-category="tools">Tools & IDEs</button>
+        </div>
+
+        <div class="skills-grid" id="skills-container">
+          <!-- Skill Items populated via JavaScript dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle">PORTFOLIO WORK</span>
+          <h2 class="section-title">Featured <span class="gradient-text">AI Projects</span></h2>
+          <p class="section-desc">Key engineering projects developed during my academic and practical training.</p>
+        </div>
+
+        <div class="projects-grid" id="projects-container">
+          <!-- Project cards inserted via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & INPLANT TIMELINE SECTION -->
+    <section id="experience" class="section-padding alt-bg">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle">ACADEMIC JOURNEY</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Inplant Training</span></h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="timeline-content glass-card hover-lift">
+              <span class="timeline-date">2024 — 2027</span>
+              <h3>B.E. Artificial Intelligence & Machine Learning</h3>
+              <span class="timeline-company">Velalar College of Engineering and Technology (Anna University)</span>
+              <p>Specializing in AI algorithms, Python programming, Computer Vision, Natural Language Processing, and Software Engineering. Current CGPA: 7.2.</p>
+              <div class="tech-tags">
+                <span>Python</span><span>Machine Learning</span><span>Computer Vision</span><span>NLP</span><span>Data Structures</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="timeline-content glass-card hover-lift">
+              <span class="timeline-date">INPLANT TRAINING</span>
+              <h3>Blockchain & DApp Concepts Trainee</h3>
+              <span class="timeline-company">Spotknack Tech Solutions, Coimbatore</span>
+              <p>Learned fundamental concepts of blockchain technology, decentralized application (DApp) architecture, and smart contract execution workflows.</p>
+              <div class="tech-tags">
+                <span>Blockchain</span><span>Smart Contracts</span><span>DApps</span><span>Decentralized Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
+            <div class="timeline-content glass-card hover-lift">
+              <span class="timeline-date">2024</span>
+              <h3>Higher Secondary Certificate (HSC)</h3>
+              <span class="timeline-company">Vivekananda Matric Higher Secondary School, Vellode</span>
+              <p>Completed State Board Higher Secondary education with focus on Mathematics, Physics, and Chemistry. Percentage: 69.9%.</p>
+              <div class="tech-tags">
+                <span>Mathematics</span><span>Physics</span><span>Chemistry</span><span>Computer Science</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-dot"><i class="fa-solid fa-book-open"></i></div>
+            <div class="timeline-content glass-card hover-lift">
+              <span class="timeline-date">2022</span>
+              <h3>SSLC (Secondary School Leaving Certificate)</h3>
+              <span class="timeline-company">Vivekananda Matric Higher Secondary School, Vellode</span>
+              <p>Successfully completed Secondary School Leaving Certificate (State Board).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & CERTIFICATIONS SECTION -->
+    <section id="achievements" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle">HONORS & CERTIFICATES</span>
+          <h2 class="section-title">Certifications & <span class="gradient-text">Achievements</span></h2>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card glass-card hover-lift">
+            <div class="achievement-icon gold"><i class="fa-solid fa-trophy"></i></div>
+            <div class="achievement-details">
+              <span class="award-badge">1st Prize</span>
+              <h3>Prompt Event Winner</h3>
+              <p>Secured 1st place in Prompt Engineering Competition, crafting optimized prompt queries for generative AI models.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card glass-card hover-lift">
+            <div class="achievement-icon silver"><i class="fa-solid fa-award"></i></div>
+            <div class="achievement-details">
+              <span class="award-badge silver-badge">2nd Prize</span>
+              <h3>Ideathon Competition</h3>
+              <p>Achieved 2nd place in Ideathon for pitching innovative AI-driven software solution concepts.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card glass-card hover-lift">
+            <div class="achievement-icon cyan"><i class="fa-solid fa-certificate"></i></div>
+            <div class="achievement-details">
+              <span class="award-badge cyan-badge">Value Added Course</span>
+              <h3>Power BI Certification</h3>
+              <p>Completed certified training in Power BI data visualization, dashboard building, and business analytics.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card glass-card hover-lift">
+            <div class="achievement-icon violet"><i class="fa-solid fa-gears"></i></div>
+            <div class="achievement-details">
+              <span class="award-badge violet-badge">Value Added Course</span>
+              <h3>REST API Certification</h3>
+              <p>Certified in RESTful API architectural principles, JSON data formats, and client-server backend communication.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card glass-card hover-lift">
+            <div class="achievement-icon emerald"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div class="achievement-details">
+              <span class="award-badge emerald-badge">Technical Workshop</span>
+              <h3>AI & Software Development Workshop</h3>
+              <p>Attended specialized technical workshop at Nandha Engineering College covering AI applications and practical software development skills.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card glass-card hover-lift">
+            <div class="achievement-icon rose"><i class="fa-solid fa-medal"></i></div>
+            <div class="achievement-details">
+              <span class="award-badge rose-badge">Extra-Curricular</span>
+              <h3>Sports & Tournament Participation</h3>
+              <p>Participated in Carrom (CAA Trophy) and Volleyball competitive sports tournaments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE MICRO-DEMO PLAYGROUND -->
+    <section id="playground" class="section-padding alt-bg">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle">INTERACTIVE LAB</span>
+          <h2 class="section-title">Canvas Particle & <span class="gradient-text">Shader Lab</span></h2>
+          <p class="section-desc">Try out this real-time interactive particle physics canvas generator created with vanilla JS.</p>
+        </div>
+
+        <div class="lab-card glass-card">
+          <div class="lab-toolbar">
+            <div class="lab-controls">
+              <label for="particle-speed">Speed:</label>
+              <input type="range" id="particle-speed" min="1" max="10" value="3">
+              
+              <label for="particle-count">Density:</label>
+              <input type="range" id="particle-count" min="20" max="150" value="70">
+
+              <label for="particle-color">Color Theme:</label>
+              <select id="particle-color" class="custom-select">
+                <option value="cyan">Cyber Cyan</option>
+                <option value="violet">Electric Violet</option>
+                <option value="emerald">Matrix Emerald</option>
+                <option value="rainbow">Rainbow Shift</option>
+              </select>
+            </div>
+            <button id="reset-lab-btn" class="btn btn-sm btn-outline"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+          </div>
+
+          <div class="lab-canvas-wrapper">
+            <canvas id="lab-canvas"></canvas>
+            <div class="lab-overlay-hint">
+              <i class="fa-solid fa-hand-pointer"></i> Move cursor or click on canvas to attract particles!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle">GET IN TOUCH</span>
+          <h2 class="section-title">Let's Connect & <span class="gradient-text">Collaborate</span></h2>
+          <p class="section-desc">Open for entry-level Software Engineer roles, AI internships, or technical projects!</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info glass-card">
+            <h3>Contact Details</h3>
+            <p>Feel free to reach out to me directly via email, phone, LinkedIn, or GitHub.</p>
+
+            <div class="contact-methods">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:giridharraja98181@gmail.com" class="contact-val" id="email-text">giridharraja98181@gmail.com</a>
+                  <button class="copy-btn" id="copy-email-btn" title="Copy Email"><i class="fa-regular fa-copy"></i></button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="contact-label">Phone</span>
+                  <a href="tel:9586333365" class="contact-val">+91 9586333365</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="contact-label">Address</span>
+                  <span class="contact-val">71, Anackalur Road, Near IOB, Vadamugam Vellode, Erode</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links-title">Find me on:</div>
+            <div class="social-links">
+              <a href="https://github.com/GIRIDHARRAJA" target="_blank" rel="noopener" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/giridharrajat/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="mailto:giridharraja98181@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-form-card glass-card">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-name">Your Name *</label>
+                <input type="text" id="form-name" required placeholder="John Doe" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Email Address *</label>
+                <input type="email" id="form-email" required placeholder="john@example.com" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Subject</label>
+                <input type="text" id="form-subject" placeholder="Job Opportunity / Project Collaboration" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message *</label>
+                <textarea id="form-message" rows="5" required placeholder="Hello Giridharraja, I would like to discuss..." class="form-input"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg w-full glow-button" id="form-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="nav-brand">
+          <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+          <span class="logo-text">Giridhar<span class="highlight">.dev</span></span>
+        </a>
+        <p>&copy; 2026 GIRIDHARRAJA T. Built with vanilla HTML5, CSS3, & JavaScript.</p>
+      </div>
+
+      <div class="footer-right">
+        <span id="live-clock" class="live-clock"><i class="fa-regular fa-clock"></i> 00:00:00 UTC</span>
+        <button id="back-to-top" class="btn-icon" title="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="modal-card glass-card">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <div class="modal-header">
+        <span class="modal-badge" id="modal-badge">Category</span>
+        <h2 id="modal-title">Project Title</h2>
+      </div>
+      <div class="modal-body">
+        <img id="modal-img" src="" alt="Project Image" class="modal-image">
+        <div class="modal-details">
+          <h3>Overview</h3>
+          <p id="modal-desc">Project description...</p>
+          
+          <h3>Key Highlights</h3>
+          <ul id="modal-highlights">
+            <!-- Dynamically populated -->
+          </ul>
+
+          <h3>Tech & Tools Used</h3>
+          <div class="tech-tags" id="modal-tech">
+            <!-- Tags -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com/GIRIDHARRAJA" target="_blank" id="modal-github-btn" class="btn btn-primary"><i class="fa-brands fa-github"></i> GitHub Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE CLI TERMINAL DRAWER -->
+  <div id="terminal-drawer" class="terminal-drawer">
+    <div class="terminal-header">
+      <div class="terminal-title">
+        <i class="fa-solid fa-terminal"></i> giridhar@ai-workstation:~ (bash)
+      </div>
+      <div class="terminal-actions">
+        <button id="terminal-minimize" class="term-btn minimize" title="Minimize"></button>
+        <button id="terminal-maximize" class="term-btn maximize" title="Maximize"></button>
+        <button id="terminal-close" class="term-btn close" title="Close">&times;</button>
+      </div>
+    </div>
+    <div class="terminal-body" id="terminal-output">
+      <div class="term-line welcome">Welcome to Giridharraja T's Terminal CLI [v1.0.0]</div>
+      <div class="term-line">Type <span class="term-cmd">'help'</span> to see commands or <span class="term-cmd">'skills'</span>, <span class="term-cmd">'projects'</span>, <span class="term-cmd">'education'</span>, <span class="term-cmd">'contact'</span>.</div>
+    </div>
+    <div class="terminal-input-row">
+      <span class="term-prompt">giridhar@ai-workstation:~$</span>
+      <input type="text" id="terminal-input" placeholder="Type a command (e.g. help, skills, contact)..." autocomplete="off">
+    </div>
+  </div>
+
+  <!-- RESUME MODAL -->
+  <div id="resume-modal" class="modal-backdrop">
+    <div class="modal-card glass-card resume-card">
+      <button class="modal-close" id="resume-close-btn">&times;</button>
+      <h2><i class="fa-solid fa-file-pdf"></i> GIRIDHARRAJA T — Resume Details</h2>
+      <div class="resume-preview-box">
+        <h3>GIRIDHARRAJA T</h3>
+        <p class="subtitle">Aspiring Software Engineer | B.E. Artificial Intelligence & Machine Learning</p>
+        <hr class="resume-divider">
+        <p><strong>Email:</strong> giridharraja98181@gmail.com | <strong>Phone:</strong> +91 9586333365</p>
+        <p><strong>Address:</strong> 71, Anackalur Road, Near IOB, Vadamugam Vellode, Erode</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/giridharrajat/ | <strong>GitHub:</strong> github.com/GIRIDHARRAJA</p>
+        <hr class="resume-divider">
+        <h4>Education</h4>
+        <p>• B.E. AI & ML (2024–2027) — Velalar College of Engineering and Technology (CGPA: 7.2)</p>
+        <p>• HSC (2024) — Vivekananda Matric Higher Secondary School, Vellode (69.9%)</p>
+        <p>• SSLC (2022) — Vivekananda Matric Higher Secondary School, Vellode</p>
+        <h4>Technical Skills</h4>
+        <p>Python, Java (Basics), HTML, CSS, Basic SQL, Git & GitHub, VS Code, Eclipse IDE, GitHub Copilot, Power BI, REST API</p>
+        <h4>Projects</h4>
+        <p>1. AI-Based Video Detection System (Real-time object detection)</p>
+        <p>2. AI-Based Role Optimized Portfolio Generation & Skill Gap Guidance System (NLP)</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="download-resume-btn"><i class="fa-solid fa-download"></i> Download Resume</button>
+        <button class="btn btn-outline" id="close-resume-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
+</body>
+</html>
